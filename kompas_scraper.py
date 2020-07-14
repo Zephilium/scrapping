@@ -14,4 +14,4 @@ z = 0
 
 for i in titles:
     print(f"\n{i.text}\n{views[z].text}")
-    z+=1
+    z += 1

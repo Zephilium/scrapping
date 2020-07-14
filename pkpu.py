@@ -1,9 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = requests.get("https://jadwalsholat.pkpu.or.id", params={"id" : "274"})
+url = requests.get("https://jadwalsholat.pkpu.or.id", params={"id": "274"})
 soup = BeautifulSoup(url.text, "html.parser")
-jadwal = soup.find_all(attrs={"class" : "table_highlight"})
+jadwal = soup.find_all(attrs={"class": "table_highlight"})
 jadwal = jadwal[0]
 
 i = 0
@@ -20,6 +20,6 @@ for x in jadwal:
         sholat["Maghrib"] = x.text
     elif i == 5:
         sholat["Isya"] = x.text
-    i+=1
+    i += 1
 
 print(sholat)
