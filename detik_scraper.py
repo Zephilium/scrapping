@@ -9,7 +9,6 @@ popular_area = soup.find(attrs={"class": "grid-row list-content"})
 
 titles = popular_area.find_all(attrs={"class": "media__title"})
 
-
 for i in titles:
     print(i.text)
 
